@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<title>{% block title %}SORESE{% endblock %}</title>
+</head>
+<body>
+
+<!--  First  -->
+
+<div class="container-fluid bg-warning">
+		
+     <nav class="navbar navbar-expand-sm navbar-light bg-faded">
+           <!-- name -->
+        <a class="navbar-brand" href="http://127.0.0.1:8000"><strong>SORESE</strong></a>
+
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+         </button>
+                    
+       
+                    
+         <!-- Links -->
+         <div class="collapse navbar-collapse justify-content-end" id="nav-content">   
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="http://127.0.0.1:8000/accounts/register/">Sign Up</a>
+                </li>
+                {% if user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="http://127.0.0.1:8000/accounts/login/">Sign in</a>
+        </li>
+          {% endif %}
+                
+            </ul>
+        </div>
+             
+     </nav>
+
+
+     <header class="text-center pb-5 pt-5">
+         <h3 class="pb-3 pt-5">SOCIETY REQUEST RESPONSE BOARD</h3>
+         <div class="contents text-center pb-3">
+            <h6 class="text-center">We are living a world of never ending request</h6>
+            <h6 class="text-center">response cycle. And our society is not</h6>
+            <h6 class="text-center">an exception.</h6>
+         </div>
+         <div class="but pb-5">
+         <button type="button" class="btn btn-dark pl-5 pr-5">RAISE A REQUEST</button>
+         </div>
+     </header> 
+</div>
+<div class="p-5">
+
+{% block content %}{% endblock %}
+
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 pb-4 bg-dark">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase text-light">SORESRE</h5>
+          <p class="text-light">2018. All rights reserved.</p>
+          <ul class="nav justify-content-left">
+                <li class="nav-item p-2">
+                   <img src="{% static 'images/f3.png' %}" alt="..." class="img-thumbnail mx-auto d-block">
+                </li>
+                <li class="nav-item p-2">
+                   <img src="{% static 'images/t3.png' %}" alt="..." class="img-thumbnail mx-auto d-block">
+                </li>
+                
+                <li class="nav-item p-2">
+                   <img src="{% static 'images/l3.png' %}" alt="..." class="img-thumbnail mx-auto d-block">
+                </li>
+               
+                
+            </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase text-light">RESOURCES.</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-light">Knowledge center</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light">Community info</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light">Available supports</a>
+            </li>
+            <li>
+              <a href="#!"class="text-light">Association details</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase text-light">ABOUT</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-light">Team</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light">Location</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light">Privacy</a>
+            </li>
+            <li>
+              <a href="#!" class="text-light">Terms</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright --
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>
