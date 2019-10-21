@@ -36,7 +36,7 @@
                     <a class="nav-link text-dark" href="http://127.0.0.1:8000/accounts/register/">Sign Up</a>
                 </li>
                 {% if user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="http://127.0.0.1:8000/accounts/logout/">Logout</a></li>
           {% else %}
           <li class="nav-item">
             <a class="nav-link text-dark" href="http://127.0.0.1:8000/accounts/login/">Sign in</a>
