@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     
     'sorese',
     'registration',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,3 +141,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'siddeshmj0123@gmail.com'
 EMAIL_HOST_PASSWORD = '9880112895'
 EMAIL_PORT = 587
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

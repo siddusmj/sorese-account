@@ -4,15 +4,24 @@
 {% block title %}{% trans "Log in" %}{% endblock %}
 
 {% block content %}
-<form method="post" action="">
+{% load crispy_forms_tags %}
+<div class="row justify-content-md-center pt-5 pb-5">
+       
+            
+            <div class="col-sm-3">
+                <h3 class="text-center">Log In to your account</h3>
+<form method="post" action="" class="pt-3 pb-3 p-3">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="{% trans 'Log in' %}" />
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary" value="{% trans 'Log in' %}" />
     <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
-<p>{% trans "Forgot your password?" %} <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>.</p>
-<p>{% trans "Not a member?" %} <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>.</p>
+
+<p >{% trans "Forgot your password?" %} <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>.</p>
+<p class="pb-5">{% trans "Not a member?" %} <a href="{% url 'registration_register' %}">{% trans "Register" %}</a>.</p>
+</div>
+</div>
 {% endblock %}
 
 
