@@ -139,13 +139,11 @@ SITE_ID = 1
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'siddeshmj0123@gmail.com'
-<<<<<<< HEAD
 
 EMAIL_HOST_PASSWORD = '9880112895'
-=======
-<<<<<<< HEAD
+
 EMAIL_HOST_PASSWORD = ''
->>>>>>> 7a813be3eb52022ea5ea197b2d85992c0a9ad836
+
 EMAIL_PORT = 587
 
 
