@@ -22,6 +22,7 @@ from django.conf.urls import url,include
 from sorese import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #url(r'^$',views.base,name='base'),
     url(r'^$',views.index, name='index'),
     path('accounts/', include('registration.backends.default.urls')),
 ]
